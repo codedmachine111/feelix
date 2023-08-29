@@ -1,0 +1,18 @@
+#signup-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  border: 2px solid #fff;
+
+  label {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  input {
+    outline: none;
+    border: 0.5px solid #fff;
+  }
+}

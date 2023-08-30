@@ -18,7 +18,7 @@ export const SignupForm = () => {
       e.preventDefault();
 
       axios.post('http://localhost:3001/auth/signup', {email: email, username: username, password: password}).then((res)=>{
-        if(res.data.message == "User Created Successfully!"){
+        if(res.data.message === "User Created Successfully!"){
             resetForm();
             alert("User Created Successfully!")
         }

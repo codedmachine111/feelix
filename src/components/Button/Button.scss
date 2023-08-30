@@ -1,0 +1,18 @@
+.btn{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    opacity: 1;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    transition: all 0.3s  ease-in-out;
+    text-decoration: none;
+    margin: 0.5rem 0;
+    background: linear-gradient(140deg, #00C29A, #6CC487, #ABCD77, #E6CC6D);
+    color: #0f0f0f;
+    font-family: 'Poppins', 'sans-serif';
+    font-weight: 500;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+}

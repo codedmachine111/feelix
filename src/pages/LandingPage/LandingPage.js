@@ -1,4 +1,5 @@
-import { SignupForm } from "../../components/SignupForm/SignupForm";
+import { Link } from "react-router-dom";
+import { LoginForm } from "../../components/LoginForm/LoginForm";
 import "./LandingPage.scss";
 
 export const LandingPage = () => {
@@ -15,9 +16,15 @@ export const LandingPage = () => {
         </div>
         <div className="landingpage-form-container">
           <div className="landingpage-form-holder">
-            <SignupForm />
+            <LoginForm />
           </div>
-          <div className="landingpage-options"></div>
+          /
+          <div className="landingpage-options">
+            login with google
+          </div>
+        </div>
+        <div className="landingpage-toggle-auth">
+          <p id="toggle-text"><Link to={'/auth'}>Don't have an account? Signup here.</Link></p>
         </div>
       </div>
     </>

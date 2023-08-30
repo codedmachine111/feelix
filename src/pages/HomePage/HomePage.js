@@ -1,10 +1,41 @@
-import './HomePage.scss'
+import "./HomePage.scss";
+import { UserContext } from "../../contexts/UserContext/UserContext";
+import { useContext, useEffect } from "react";
+import axios from "axios";
 
-export const HomePage = ()=>{
+export const HomePage = () => {
+  const { authUser, setAuthUser } = useContext(UserContext);
 
-    return(<>
-        <div className='homepage-container'>
-            <h2>Welcome!</h2>
-        </div>
-    </>)
-}
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/auth/verify", {
+        headers: { accessToken: localStorage.getItem("token") },
+      })
+      .then((res) => {
+        if (!res.data.error) {
+          setAuthUser({
+            status: true,
+            userId: res.data.user.id,
+            email: res.data.user.email,
+            username: res.data.user.username,
+          });
+        } else {
+          console.log(res.data.error);
+          setAuthUser({
+            status: false,
+            userId: 0,
+            email: "",
+            username: "",
+          });
+        }
+      });
+  }, []);
+
+  return (
+    <>
+      <div className="homepage-container">
+        <h2>Welcome {authUser.username}!</h2>
+      </div>
+    </>
+  );
+};

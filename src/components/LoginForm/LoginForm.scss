@@ -1,0 +1,22 @@
+#login-form {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+
+    input {
+      outline: none;
+      border: none;
+      background: #222222;
+      font-family: 'Poppins', 'sans-serif';
+      margin: 0.3rem 0;
+      padding: 1rem;
+      width: 90%;
+      border-radius: 0.3rem;
+    }
+
+    .btn{
+      width: 90%;
+    }
+  }
+  

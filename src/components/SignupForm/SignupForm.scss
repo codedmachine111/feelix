@@ -1,18 +1,32 @@
 #signup-form {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   flex-direction: column;
-  padding: 1rem;
-  border: 2px solid #fff;
-
-  label {
-    font-size: 1rem;
-    font-weight: bold;
-  }
 
   input {
     outline: none;
-    border: 0.5px solid #fff;
+    border: none;
+    background: #222222;
+    font-family: "Poppins", "sans-serif";
+    margin: 0.3rem 0;
+    padding: 1rem;
+    width: 90%;
+    border-radius: 0.3rem;
   }
+
+  .btn {
+    width: 90%;
+    background: #0f0f0f;
+    border: 3px solid transparent;
+    border-image: linear-gradient(140deg, #00C29A, #6CC487, #ABCD77, #E6CC6D);
+    border-image-slice: 1; /* Divide the border into slices */
+    border-radius: 0.3rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    justify-content: center;
+  }
+  
 }

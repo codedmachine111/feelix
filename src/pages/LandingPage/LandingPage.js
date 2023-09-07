@@ -18,13 +18,14 @@ export const LandingPage = () => {
           <div className="landingpage-form-holder">
             <LoginForm />
           </div>
-          /
           <div className="landingpage-options">
-            login with google
+              <img src="/grart.png" id="graphic-art"/>
           </div>
         </div>
         <div className="landingpage-toggle-auth">
-          <p id="toggle-text"><Link to={'/auth'}>Don't have an account? Signup here.</Link></p>
+          <p id="toggle-text">
+            <Link to={"/auth"}>Don't have an account? Signup here.</Link>
+          </p>
         </div>
       </div>
     </>

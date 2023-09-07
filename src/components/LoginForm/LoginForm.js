@@ -72,7 +72,7 @@ export const LoginForm = () => {
           autoComplete="off"
         />
 
-        <Button title={"Login to Your Account"} type={"submit"} onSubmit={handleLoginForm}/>
+        <Button title={"Login"} type={"submit"} onSubmit={handleLoginForm}/>
       </form>
     </>
   );

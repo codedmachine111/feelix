@@ -4,6 +4,8 @@ import { LandingPage } from "./pages/LandingPage/LandingPage";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { UserProvider } from "../src/contexts/UserContext/UserContext";
 import { useState } from "react";
+import { AuthPage } from "./pages/AuthPage/AuthPage";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const App = () => {
   const [authUser, setAuthUser] = useState({
@@ -16,10 +18,15 @@ const App = () => {
   return (
     <div className="App">
       <UserProvider>
-        <Routes>
-          <Route element={<LandingPage />} path="/"></Route>
-          <Route element={<HomePage />} path="/home"></Route>
-        </Routes>
+        <GoogleOAuthProvider
+          clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+        >
+          <Routes>
+            <Route element={<LandingPage />} path="/"></Route>
+            <Route element={<HomePage />} path="/home"></Route>
+            <Route element={<AuthPage />} path="/auth"></Route>
+          </Routes>
+        </GoogleOAuthProvider>
       </UserProvider>
     </div>
   );

@@ -44,7 +44,11 @@
     }
     .landingpage-options{
       width: 50%;
-      border: 1px solid blue;
+      display: none;
+      img{
+        width: 70%;
+        max-height: 60%;
+      }
     }
   }
   .landingpage-toggle-auth{

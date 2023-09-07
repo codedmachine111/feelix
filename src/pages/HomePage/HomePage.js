@@ -2,6 +2,7 @@ import "./HomePage.scss";
 import { UserContext } from "../../contexts/UserContext/UserContext";
 import { useContext, useEffect } from "react";
 import axios from "axios";
+import { RoomForm } from "../../components/RoomForm/RoomForm";
 
 export const HomePage = () => {
   const { authUser, setAuthUser } = useContext(UserContext);
@@ -35,6 +36,7 @@ export const HomePage = () => {
     <>
       <div className="homepage-container">
         <h2>Welcome {authUser.username}!</h2>
+          <RoomForm />
       </div>
     </>
   );

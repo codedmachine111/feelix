@@ -1,6 +1,7 @@
 import "./SignupForm.scss";
 import { useState, useCallback } from "react";
 import axios from "axios";
+import {Button} from '../Button/Button'
 
 export const SignupForm = () => {
   const [email, setEmail] = useState("");
@@ -30,7 +31,6 @@ export const SignupForm = () => {
   return (
     <>
       <form id="signup-form" onSubmit={handleSignupForm}>
-        <label htmlFor="username">Name:</label>
         <input
           type="text"
           name="username"
@@ -40,9 +40,8 @@ export const SignupForm = () => {
             setUsername(e.target.value);
           }}
           autoComplete="off"
+          placeholder="First Name"
         />
-
-        <label htmlFor="email">Email:</label>
         <input
           type="text"
           name="email"
@@ -52,9 +51,8 @@ export const SignupForm = () => {
             setEmail(e.target.value);
           }}
           autoComplete="off"
+          placeholder="Enter Your Email"
         />
-
-        <label htmlFor="password">Password:</label>
         <input
           type="password"
           name="password"
@@ -64,11 +62,10 @@ export const SignupForm = () => {
             setPassword(e.target.value);
           }}
           autoComplete="off"
+          placeholder="Password"
         />
 
-        <button type="submit" onSubmit={handleSignupForm}>
-          Signup
-        </button>
+        <Button title={"Signup"} type={"submit"} onSubmit={handleSignupForm}/>
       </form>
     </>
   );

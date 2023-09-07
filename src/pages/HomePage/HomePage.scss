@@ -1,0 +1,15 @@
+.homepage-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', 'sans-serif';
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+
+    h2{
+        width: 100%;
+        text-align: center;
+    }
+}

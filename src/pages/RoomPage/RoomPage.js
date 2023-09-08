@@ -19,7 +19,7 @@ export const RoomPage = () => {
   }, []);
 
   const handleDisconnect = () => {
-    //localStorage.removeItem("lk-accessToken");
+    // localStorage.removeItem("lk-accessToken");
     navigate("/home");
   };
 

@@ -1,15 +1,30 @@
 .homepage-container{
     display: flex;
-    justify-content: center;
     align-items: center;
     font-family: 'Poppins', 'sans-serif';
     flex-direction: column;
     width: 100%;
-    min-height: 100vh;
+    min-height: 85vh;
     height: auto;
 
     h2{
         width: 100%;
-        text-align: center;
+        padding: 1rem;
+        text-align: left;
+        font-size: 3rem;
+        #username{
+            background: linear-gradient(140deg, #00c29a, #6cc487, #abcd77, #e6cc6d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    .homepage-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        min-height: calc(100vh - 15vh - 4rem);
     }
 }

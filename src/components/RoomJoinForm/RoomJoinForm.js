@@ -1,19 +1,18 @@
-import "./RoomForm.scss";
+import "./RoomJoinForm.scss";
 import { useState, useContext } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import { Button } from "../Button/Button";
 import axios from "axios";
 import { UserContext } from "../../contexts/UserContext/UserContext";
 
-export const RoomForm = () => {
-
+export const RoomJoinForm = () => {
   const [roomId, setRoomId] = useState("");
 
   const { authUser } = useContext(UserContext);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const handleRoomForm = async (e) => {
+  const handleRoomJoinForm = async (e) => {
     e.preventDefault();
 
     await axios
@@ -22,16 +21,19 @@ export const RoomForm = () => {
           roomId: roomId,
           name: authUser.username,
         },
+        headers: {
+          accessToken: localStorage.getItem("token"),
+        },
       })
       .then((res) => {
         localStorage.setItem("lk-accessToken", res.data.token);
       });
-    navigate(`/room/${roomId}`)
+    navigate(`/room/${roomId}`);
   };
 
   return (
     <>
-      <form id="room-form" onSubmit={handleRoomForm}>
+      <form id="room-form" onSubmit={handleRoomJoinForm}>
         <input
           type="text"
           name="roomId"

@@ -1,0 +1,10 @@
+.roompage-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', 'sans-serif';
+    .lk-room-container{
+        width: 80%;
+    }
+}

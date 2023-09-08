@@ -2,11 +2,14 @@ import "./SignupForm.scss";
 import { useState, useCallback } from "react";
 import axios from "axios";
 import {Button} from '../Button/Button'
+import { useNavigate } from "react-router-dom";
 
 export const SignupForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+
+  const navigate = useNavigate();
 
   const resetForm = () => {
     setEmail("");
@@ -22,6 +25,7 @@ export const SignupForm = () => {
         if(res.data.message === "User Created Successfully!"){
             resetForm();
             alert("User Created Successfully!")
+            navigate('/')
         }
       })
     },

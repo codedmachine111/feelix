@@ -1,18 +1,44 @@
-.btn{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    opacity: 1;
-    padding: 0.5rem 1rem;
-    border-radius: 0.3rem;
-    transition: all 0.3s  ease-in-out;
-    text-decoration: none;
-    margin: 0.5rem 0;
-    background: linear-gradient(140deg, #00C29A, #6CC487, #ABCD77, #E6CC6D);
-    color: #222222;
-    font-family: 'Poppins', 'sans-serif';
-    font-weight: 500;
-    font-size: 1.2rem;
-    border: none;
-    cursor: pointer;
+.btn {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  opacity: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  margin: 0.5rem 0;
+  background: linear-gradient(140deg, #00c29a, #6cc487, #abcd77, #e6cc6d);
+  color: #222222;
+  font-family: "Poppins", "sans-serif";
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background: #0f0f0f;
+    transition: all 0.1s ease-in-out;
+    border: 2px solid transparent;
+    border-image: linear-gradient(140deg, #00c29a, #6cc487, #abcd77, #e6cc6d);
+    border-image-slice: 1; /* Divide the border into slices */
+  }
+}
+
+#signout-btn{
+    background: none;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 300;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    border: 1px solid transparent;
+    border-image: linear-gradient(140deg, #00c29a, #6cc487, #abcd77, #e6cc6d);
+    border-image-slice: 1; /* Divide the border into slices */
+
+    &:hover{
+        transition: all 0.1s ease;
+        background: #6cc487;
+        color: #0f0f0f;
+    }
 }

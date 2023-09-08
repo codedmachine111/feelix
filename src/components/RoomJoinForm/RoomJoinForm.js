@@ -1,5 +1,5 @@
 import "./RoomJoinForm.scss";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../Button/Button";
 import axios from "axios";
@@ -7,6 +7,7 @@ import { UserContext } from "../../contexts/UserContext/UserContext";
 
 export const RoomJoinForm = () => {
   const [roomId, setRoomId] = useState("");
+  const [roomName, setRoomName] = useState("");
 
   const { authUser } = useContext(UserContext);
 
@@ -18,8 +19,8 @@ export const RoomJoinForm = () => {
     await axios
       .get(`http://localhost:3001/room/get-token`, {
         params: {
-          roomId: roomId,
-          name: authUser.username,
+          roomName: roomName,
+          username: authUser.username,
         },
         headers: {
           accessToken: localStorage.getItem("token"),
@@ -27,22 +28,29 @@ export const RoomJoinForm = () => {
       })
       .then((res) => {
         localStorage.setItem("lk-accessToken", res.data.token);
+        setRoomId(res.data.roomId);
       });
-    navigate(`/room/${roomId}`);
   };
+
+  useEffect(() => {
+    if (roomId) {
+      navigate(`/room/${roomId}`);
+    }
+  }, [roomId, navigate]);
 
   return (
     <>
-      <form id="room-form" onSubmit={handleRoomJoinForm}>
+      <form id="room-join-form" onSubmit={handleRoomJoinForm}>
+        <h3>Join / Create a room</h3>
         <input
           type="text"
-          name="roomId"
+          name="roomName"
           placeholder="Enter Room Id"
-          value={roomId}
+          value={roomName}
           onChange={(e) => {
-            setRoomId(e.target.value);
+            setRoomName(e.target.value);
           }}
-          id="roomId"
+          id="roomName"
           autoComplete="off"
         />
         <Button title={"Create"} type={"submit"} />

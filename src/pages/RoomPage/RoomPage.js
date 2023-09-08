@@ -26,7 +26,7 @@ export const RoomPage = () => {
   return (
     <>
       <div className="roompage-container">
-        <h2>Room name: {roomId}</h2>
+        <h2>Room name: <span id="room-name">{roomId.split('-')[0]}</span></h2>
         <LiveKitRoom
           token={accessToken}
           audio={true}

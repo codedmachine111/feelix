@@ -10,7 +10,7 @@ export const HomePage = () => {
 
   useEffect(() => {
     axios
-      .get(`https://feelix.vercel.app/auth/verify`, {
+      .get(`https://feelix-serverside.vercel.app/auth/verify`, {
         headers: { accessToken: localStorage.getItem("token") },
       })
       .then((res) => {

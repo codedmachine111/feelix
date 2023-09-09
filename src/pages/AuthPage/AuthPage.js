@@ -6,13 +6,17 @@ import { useState } from "react";
 export const AuthPage = () => {
   const [toggle, setToggle] = useState(false);
 
+  const toggleAuth = ()=>{
+    setToggle(!toggle);
+  }
+
   return (
     <>
       <div className="authpage-container">
         <div className="authpage-content">
           {!toggle ? (
             <>
-              <SignupForm />
+              <SignupForm toggleAuth={toggleAuth}/>
             </>
           ) : (
             <>

@@ -17,7 +17,7 @@ export const RoomJoinForm = () => {
     e.preventDefault();
 
     await axios
-      .get(`http://localhost:3001/room/get-token`, {
+      .get(`${process.env.REACT_APP_SERVER_URL}/room/get-token`, {
         params: {
           roomName: roomName,
           username: authUser.username,

@@ -22,7 +22,7 @@ export const LoginForm = () => {
       e.preventDefault();
 
       axios
-        .post("http://localhost:3001/auth/login", {
+        .post(`${process.env.REACT_APP_SERVER_URL}/login`, {
           email: email,
           password: password,
         })

@@ -19,7 +19,7 @@ export const LandingPage = () => {
             <LoginForm />
           </div>
           <div className="landingpage-options">
-              <img src="/grart.png" id="graphic-art"/>
+              {/* <img src="/grart.png" id="graphic-art"/> */}
           </div>
         </div>
         <div className="landingpage-toggle-auth">

@@ -10,7 +10,7 @@ export const HomePage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/auth/verify", {
+      .get(`${process.env.REACT_APP_SERVER_URL}/auth/verify`, {
         headers: { accessToken: localStorage.getItem("token") },
       })
       .then((res) => {

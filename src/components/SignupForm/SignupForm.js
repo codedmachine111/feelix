@@ -4,7 +4,7 @@ import axios from "axios";
 import {Button} from '../Button/Button'
 import { useNavigate } from "react-router-dom";
 
-export const SignupForm = () => {
+export const SignupForm = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -21,11 +21,11 @@ export const SignupForm = () => {
     (e) => {
       e.preventDefault();
 
-      axios.post('http://localhost:3001/auth/signup', {email: email, username: username, password: password}).then((res)=>{
+      axios.post(`${process.env.REACT_APP_SERVER_URL}/auth/signup`, {email: email, username: username, password: password}).then((res)=>{
         if(res.data.message === "User Created Successfully!"){
             resetForm();
             alert("User Created Successfully!")
-            navigate('/')
+            props.toggleAuth();
         }
       })
     },

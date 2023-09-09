@@ -21,7 +21,7 @@ export const SignupForm = (props) => {
     (e) => {
       e.preventDefault();
 
-      axios.post(`${process.env.REACT_APP_SERVER_URL}/auth/signup`, {email: email, username: username, password: password}).then((res)=>{
+      axios.post(`https://feelix.vercel.app/auth/signup`, {email: email, username: username, password: password}).then((res)=>{
         if(res.data.message === "User Created Successfully!"){
             resetForm();
             alert("User Created Successfully!")

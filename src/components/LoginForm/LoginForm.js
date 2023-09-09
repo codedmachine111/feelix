@@ -22,7 +22,7 @@ export const LoginForm = () => {
       e.preventDefault();
 
       axios
-        .post(`${process.env.REACT_APP_SERVER_URL}/login`, {
+        .post(`https://feelix.vercel.app/auth/login`, {
           email: email,
           password: password,
         })

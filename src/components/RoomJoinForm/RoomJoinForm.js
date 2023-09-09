@@ -17,7 +17,7 @@ export const RoomJoinForm = () => {
     e.preventDefault();
 
     await axios
-      .get(`${process.env.REACT_APP_SERVER_URL}/room/get-token`, {
+      .get(`https://feelix.vercel.app/room/get-token`, {
         params: {
           roomName: roomName,
           username: authUser.username,

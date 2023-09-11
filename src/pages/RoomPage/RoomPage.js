@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "@livekit/components-styles";
 import { LiveKitRoom, VideoConference } from "@livekit/components-react";
+import { Navbar } from "../../components/Navbar/Navbar";
 
 export const RoomPage = () => {
   const [accessToken, setAccessToken] = useState("");
@@ -25,6 +26,7 @@ export const RoomPage = () => {
 
   return (
     <>
+    <Navbar />
       <div className="roompage-container">
         <h2>Room name: <span id="room-name">{roomId.split('-')[0]}</span></h2>
         <LiveKitRoom

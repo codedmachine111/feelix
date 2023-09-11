@@ -28,3 +28,17 @@
         min-height: calc(100vh - 15vh - 4rem);
     }
 }
+
+// FOR MOBILE DEVICES
+@media screen and (max-width: 800px){
+    .homepage-container{
+        min-height: 100vh;
+
+        h2{
+            font-size: 2rem;
+        }
+        .homepage-content{
+            min-height: calc(80vh - 15vh - 2rem);
+        }
+    }
+}

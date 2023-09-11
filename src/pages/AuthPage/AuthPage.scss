@@ -1,0 +1,15 @@
+.authpage-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+}
+
+@media all and (max-width: 800px){
+    .authpage-container{
+        min-height: 100vh;
+    }
+}

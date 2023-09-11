@@ -19,3 +19,14 @@
         width: 80%;
     }
 }
+
+@media screen and (min-width: 800px){
+    .roompage-container{
+        h2{
+            font-size: 1.5rem;
+        }
+        .lk-room-container{
+            width: 90%;
+        }
+    }
+}
